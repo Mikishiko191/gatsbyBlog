@@ -1,0 +1,41 @@
+// Utilities
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.u-pull-right {
+  float: right;
+}
+
+.u-pull-left {
+  float: left;
+}
+
+// MIXINS
+
+
+@mixin author-card( $width, $height) {
+  display: flex;
+  align-items: center;
+  .author-profile-image {
+    width: $width;
+    height: $height;
+    margin-right: 15px;
+    border-radius: 100%;
+    object-fit: cover;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  .author-card-content {
+    .author-card-name {
+      margin: 0;
+    }
+  }
+}

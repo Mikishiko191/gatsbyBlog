@@ -1,0 +1,131 @@
+.single-blog {
+  padding: 4em 0;
+
+  .single-wrapper {
+    width: 1440px;
+    margin: 0 auto;
+    @media only screen and (min-width : 320px) {
+      max-width: 85%;
+    }
+    @media only screen and (min-width : 750px) {
+      max-width: 65%;
+    }
+  }
+
+  .flex__grid__author {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .author-card {
+      @include author-card(60px, 60px);
+    }
+
+  }
+
+  // END
+
+  // blog title
+  &__title {
+    padding-top: 1em;
+    font-weight: bolder;
+  }
+
+  &__mainImage {
+    .img__center {
+      margin: 0 auto;
+    }
+  }
+
+
+  // Blog content
+  &__content {
+    margin: 1em 0;
+    font-size: 2.2rem;
+    line-height: 1.6em;
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    img {
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      padding: 1em 0;
+    }
+
+    blockquote {
+      margin: 0 0 1.5em;
+      padding: 0 1.5em;
+      border-left: $navBar__color__hover 3px solid;
+      p {
+        margin: 0 0 1em 0;
+        color: inherit;
+        font-size: 2rem;
+        line-height: inherit;
+        font-style: italic;
+      }
+    }
+
+
+  }
+
+  &__social {
+    border-top: 1px solid #e1e0e1;
+    border-bottom: 1px solid #e1e0e1;
+    .socal__list {
+      margin: .5em 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      font-size: 3em;
+      li {
+        transition: all 600ms;
+        &:hover {
+          transform: translate3d(0, -1rem, 0);
+        }
+      }
+    }
+  }
+
+
+  // See also section
+  &__seeAlso {
+    padding: 1em 0;
+    .section__mainTitle {
+      text-transform: capitalize;
+      font-weight: bolder;
+    }
+    .blog-card {
+      display: grid;
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
+      @media only screen and (min-width : 320px) {
+        grid-template-columns: 1fr;
+      }
+      @media only screen and (min-width : 1200px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &__col {
+        box-shadow: 0 10px 20px rgba(186, 186, 186, 0.3), 0 6px 6px rgba(186, 186, 186, 0.3);
+        transition: all 600ms;
+        &:hover {
+          box-shadow: 0 10px 20px rgba(186, 186, 186, 0.6), 0 6px 6px rgba(186, 186, 186, 0.6);
+        }
+      }
+
+      &__content {
+        padding: 1em 1em;
+        .author-card {
+          @include author-card(40px, 40px);
+        }
+      }
+    }
+  }
+
+
+}
