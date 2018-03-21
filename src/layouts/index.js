@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/Header'
 import Footer from '../components/Footer/Footer'
 
 import './index.scss'
@@ -19,7 +18,6 @@ const TemplateWrapper = ({ children }) => (
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' },
       ]}
     />
-    <Header />
 
       {children()}
       
