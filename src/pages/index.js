@@ -3,6 +3,8 @@ import Link from 'gatsby-link'
 
 import Header from '../components/Header'
 
+
+
 const BlogPost = ({node}) => {
   return (
     <div>
@@ -15,7 +17,9 @@ const BlogPost = ({node}) => {
 
       <div className="blog-body__card">
         <Link to={node.slug} className="blog-body__info ">
-          <img className="img-responsive img__shadow" src={ node.featuredImage.file.url } alt="" />
+          <div className="blog-body__bg">
+            <img className="img-responsive img__shadow" src={ node.featuredImage.file.url } alt="" />
+          </div>
           <h2 className="blog-body__title">{ node.title }</h2>
           <p className="blog-body__excerpt">{ node.content.childMarkdownRemark.excerpt }</p>
           { node.author === "Roman Ochnev" &&
