@@ -10,6 +10,24 @@ module.exports = {
         accessToken: `80d8af430cb13518f430857c2b41dbedfdfed70f52d437481003b2e27099a304`,
       },
     },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/favicon.png",
+        injectHTML: true,
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    },
     'gatsby-transformer-remark',
     `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet'
