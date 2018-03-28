@@ -20,7 +20,7 @@ const BlogPost = ({node}) => {
           <div className="blog-body__bg">
             <img className="img-responsive img__shadow" src={ node.featuredImage.file.url } alt="" />
           </div>
-          <h2 className="blog-body__title">{ node.title }</h2>
+          <h2 className="blog-body__title">{ node.title}</h2>
           <p className="blog-body__excerpt">{ node.content.childMarkdownRemark.excerpt }</p>
           { node.author === "Roman Ochnev" &&
             <div className="author-card">
@@ -39,7 +39,7 @@ const BlogPost = ({node}) => {
               </div>
             </div>   
           } 
-          <hr />
+          {/* <hr /> */}
         </Link>
       </div>
     </div>
@@ -51,7 +51,7 @@ const IndexPage = ({data}) => (
   <section className="blog-body">
     <div className="blog-body__grid wrapper">
       {data.allContentfulAllContentfulBlog.edges.map((edge) => 
-        <div key={ edge.node.id } >
+        <div className="underline" key={ edge.node.id } >
           <BlogPost node={ edge.node } />
         </div>
       )}
