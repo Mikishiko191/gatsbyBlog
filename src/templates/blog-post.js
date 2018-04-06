@@ -40,7 +40,7 @@ class BlogPost extends Component {
               } 
               { author === "revain" &&
                 <div className="author-card">
-                  <img className="author-profile-image" src="https://en.gravatar.com/userimage/136487050/30579f9f60316c9b2d9cafa729485fe0.png?size=200" alt="Roman Ochnev" />
+                  <img className="author-profile-image" src="https://cdn-images-1.medium.com/fit/c/60/60/1*rAChgZhN6ZrJ6P1x9n4T6w.jpeg" alt="Roman Ochnev" />
                   <div className="author-card-content">
                     <h4 className="author-card-name">Revain</h4>
                   </div>
