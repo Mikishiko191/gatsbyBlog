@@ -8,7 +8,7 @@ const Footer = () => (
         <img className="img-responsive" width="200px" src={ MainLogo } alt="" />
       </div>
       <div className="footer__copyright">
-        <p>© 2018 Revain Inc. </p>
+        <p>© 2018 Revain.io ltd. </p>
       </div>
       <div className="footer__content">
         <p>First Trustworthy Review Platform, Built With Blockchain Technology</p>
