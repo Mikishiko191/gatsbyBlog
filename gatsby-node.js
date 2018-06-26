@@ -20,13 +20,15 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
  exports.createPages = ({graphql, boundActionCreators}) => {
    const {createPage} = boundActionCreators
    return new Promise((resolve, reject) => {
-     const blogPostTemplate = path.resolve('src/templates/blog-post.js')
+     const blogPostTemplate = path.resolve('src/templates/blog-post.js');
+     const FaqPostTemplate = path.resolve('src/templates/faq-post.js');
      resolve(
        graphql(`
          {
            allContentfulAllContentfulBlog (limit: 100) {
             edges{
               node{
+                id
                 slug
               }
             }
@@ -46,7 +48,68 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
            })
          })
          return
-       })
+       }),
+       graphql(`
+        {
+          allContentfulFaqBlogs (limit: 100) {
+           edges{
+             node{
+               id
+               slug
+             }
+           }
+         }
+        }
+      `).then((result) => {
+        if (result.errors) {
+          reject(result.errors)
+        }
+        result.data.allContentfulFaqBlogs.edges.forEach((edge) => {
+          createPage ({
+            path: edge.node.slug,
+            component: FaqPostTemplate,
+            context: {
+              slug: edge.node.slug
+            }
+          })
+        })
+        return
+      })
      )
    })
  }
+
+//  exports.createPages = ({graphql, boundActionCreators}) => {
+//   const {createPage} = boundActionCreators
+//   return new Promise((resolve, reject) => {
+//     const FaqPostTemplate = path.resolve('src/templates/faq-post.js')
+//     resolve(
+//       graphql(`
+//         {
+//           allContentfulFaqBlogs (limit: 100) {
+//            edges{
+//              node{
+//                id
+//                slug
+//              }
+//            }
+//          }
+//         }
+//       `).then((result) => {
+//         if (result.errors) {
+//           reject(result.errors)
+//         }
+//         result.data.allContentfulFaqBlogs.edges.forEach((edge) => {
+//           createPage ({
+//             path: edge.node.slug,
+//             component: FaqPostTemplate,
+//             context: {
+//               slug: edge.node.slug
+//             }
+//           })
+//         })
+//         return
+//       })
+//     )
+//   })
+// }
