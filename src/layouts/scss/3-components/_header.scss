@@ -10,16 +10,27 @@
     font-size: 1.3em;
     text-transform: capitalize;
     margin-right: 3em;
-    transition: all 600ms;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+    
+  }
+  &__btn{
+    background-color: #bd2df5;
+    padding: .3em 1em;
+      margin-left: 20px;
+      transition: all 600ms;
+      border-radius: 25px;
+       
     &:hover {
       transform: translate3d(0, -0.3em, 0);
     }
-    .backBtn {
-      background-color: #bd2df5;
-      padding: .3em 1em;
-      margin-left: 20px;
-      border-radius: 25px;
+
+    .backBtn{
+      
       color: white;
+      
     }
   }
   &__flex {

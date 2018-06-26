@@ -30,8 +30,12 @@ class Header extends Component {
             </Link>
           </div>
           <div className="header__navBar">
-            <Link className="backBtn" to="/page-2/">Go to page 2</Link>
-            <a className="backBtn" href={ url }>{ name }</a>
+            <div className="header__btn">
+             <Link className="backBtn" to="/page-2/">FAQ</Link>
+            </div>
+            <div className="header__btn">
+              <a className="backBtn" href={ url }>{ name }</a>
+            </div>
           </div>
         </div>
       </header>
