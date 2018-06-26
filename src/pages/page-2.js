@@ -63,7 +63,8 @@ export const pageFaq = graphql`
     allContentfulFaqBlogs (
     filter: {
       node_locale: {eq: "en-US"}
-    }
+    },
+    sort: {fields: [postCreatedData], order: DESC }
     ) {
         edges {
           node {

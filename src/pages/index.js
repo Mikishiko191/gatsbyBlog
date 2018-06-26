@@ -67,8 +67,7 @@ export const pageQuery = graphql`
     allContentfulAllContentfulBlog (
     filter: {
       node_locale: {eq: "en-US"}
-    },
-    sort: {fields: [postCreatedData], order: ASC }
+    }
     ) {
         edges {
           node {

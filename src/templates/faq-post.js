@@ -18,7 +18,7 @@ class FaqPost extends Component {
         
         <Header
           name="back to posts"
-          url="/"
+          url="/page-2"
         />
 
         <section className="single-blog">
@@ -92,7 +92,7 @@ export const pageFaq = graphql`
       title
       slug
       author
-      postCreatedData
+      postCreatedData(formatString: "MMMM DD, YYYY")
       content {
         childMarkdownRemark{
           html
