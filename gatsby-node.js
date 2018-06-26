@@ -78,38 +78,3 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
      )
    })
  }
-
-//  exports.createPages = ({graphql, boundActionCreators}) => {
-//   const {createPage} = boundActionCreators
-//   return new Promise((resolve, reject) => {
-//     const FaqPostTemplate = path.resolve('src/templates/faq-post.js')
-//     resolve(
-//       graphql(`
-//         {
-//           allContentfulFaqBlogs (limit: 100) {
-//            edges{
-//              node{
-//                id
-//                slug
-//              }
-//            }
-//          }
-//         }
-//       `).then((result) => {
-//         if (result.errors) {
-//           reject(result.errors)
-//         }
-//         result.data.allContentfulFaqBlogs.edges.forEach((edge) => {
-//           createPage ({
-//             path: edge.node.slug,
-//             component: FaqPostTemplate,
-//             context: {
-//               slug: edge.node.slug
-//             }
-//           })
-//         })
-//         return
-//       })
-//     )
-//   })
-// }
