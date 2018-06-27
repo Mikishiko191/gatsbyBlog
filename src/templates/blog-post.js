@@ -94,7 +94,7 @@ export const pageQuery = graphql`
       title
       slug
       author
-      postCreatedData
+      postCreatedData(formatString: "MMMM DD, YYYY")
       content {
         childMarkdownRemark{
           html
