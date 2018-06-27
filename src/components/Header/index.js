@@ -20,21 +20,40 @@ import MainLogo from '../../assets/header__logo.svg';
 
 class Header extends Component {
   render() {
-    const { name, url } = this.props
+    const { name, url, name2, url2 } = this.props
     return (
       <header className="header">
         <div className="header__flex">
           <div className="header__logo">
-            <Link to="/">      
+            <a href="http://revain.org">      
               <img className="img-responsive" width="130px" src={ MainLogo } alt="" />
-            </Link>
+            </a>
           </div>
           <div className="header__navBar">
-            <div className="header__btn">
-             <Link className="backBtn" to="/FAQ/">FAQ</Link>
+            <div className="header__wrap">
+              <div className="header__btn">
+                <a className="backBtn" href='https://dashboard.revain.org'>Try 0.8</a>
+              </div>
+              <div className="header__hide">
+                <a className="hide" href='http://revain.org/#about'>About</a>
+              </div>
+              <div className="header__hide">
+                <a className="hide" href='http://revain.org/#features'>Features</a>
+              </div>
+              <div className="header__hide">
+                <a className="hide" href='http://revain.org/#arc'>Architecture</a>
+              </div>
             </div>
-            <div className="header__btn">
-              <a className="backBtn" href={ url }>{ name }</a>
+            <div className="header__wrap">
+              <div className="header__hide">
+                <a className="hide" href='http://revain.org/#pubs'>Publications</a>
+              </div>
+              <div className="header__btn">
+              <Link className="backBtn" to={ url2 }>{ name2 }</Link>
+              </div>
+              <div className="header__btn back">
+                <a className="backBtn" href={ url }>{ name }</a>
+              </div>
             </div>
           </div>
         </div>

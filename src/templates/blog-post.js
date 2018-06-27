@@ -19,8 +19,10 @@ class BlogPost extends Component {
       <div>
         
         <Header
-          name="back to posts"
-          url="/"
+          name="back to revain"
+          url="http://revain.org"
+          name2="back to posts"
+          url2="/"
         />
 
         <section className="single-blog">

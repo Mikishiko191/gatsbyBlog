@@ -9,6 +9,8 @@ const FaqPost = ({node}) => {
       <Header
         name="back to revain"
         url="http://revain.org"
+        name2="main blog"
+        url2="/"
       />
 
       <div className="blog-body__card">

@@ -17,8 +17,10 @@ class FaqPost extends Component {
       <div>
         
         <Header
-          name="back to posts"
-          url="/page-2"
+          name="back to revain"
+          url="http://revain.org"
+          name2="back to posts"
+          url2="/FAQ"
         />
 
         <section className="single-blog">

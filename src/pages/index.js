@@ -12,6 +12,8 @@ const BlogPost = ({node}) => {
       <Header
         name="back to revain"
         url="http://revain.org"
+        name2="FAQ"
+        url2="/FAQ"
       />
 
 
