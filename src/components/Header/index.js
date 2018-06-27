@@ -31,7 +31,7 @@ class Header extends Component {
           </div>
           <div className="header__navBar">
             <div className="header__btn">
-             <Link className="backBtn" to="/page-2/">FAQ</Link>
+             <Link className="backBtn" to="/FAQ/">FAQ</Link>
             </div>
             <div className="header__btn">
               <a className="backBtn" href={ url }>{ name }</a>
