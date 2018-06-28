@@ -66,7 +66,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         }
         result.data.allContentfulFaqBlogs.edges.forEach((edge) => {
           createPage ({
-            path: edge.node.slug,
+            path:  edge.node.slug,
             component: FaqPostTemplate,
             context: {
               slug: edge.node.slug

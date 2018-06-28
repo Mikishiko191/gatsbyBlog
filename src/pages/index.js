@@ -176,7 +176,7 @@ const Second = ({data}) => (
 
 // Graphql
 
-export const pageQuery = graphql`
+export const pageandFaqQuery = graphql`
    query pageQuery {
     allContentfulAllContentfulBlog (
     filter: {
