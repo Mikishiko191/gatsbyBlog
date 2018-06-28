@@ -1,21 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Container, Row, Col } from 'reactstrap';
 import Header from '../components/Header'
-
+import classnames from 'classnames';
 
 
 const BlogPost = ({node}) => {
   return (
     <div>
 
-      <Header
-        name="back to revain"
-        url="http://revain.org"
-        name2="FAQ"
-        url2="/FAQ"
-      />
-
+      
+      
 
       <div className="blog-body__card">
         <Link to={node.slug} className="blog-body__info ">
@@ -27,6 +22,76 @@ const BlogPost = ({node}) => {
     </div>
     
   )
+}
+
+export default class Page extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      activeTab: '1'
+    };
+  }
+  
+  toggle(tab) {
+    if (this.state.activeTab !== tab) {
+      this.setState({
+        activeTab: tab
+      });
+    }
+  }
+  render() {
+    const { data } = this.props;
+    return (
+      <div className="mainpage">
+        <Header
+          name="back to revain"
+          url="http://revain.org"
+          name2="FAQ"
+          url2="/FAQ"       
+        />  
+        <div className="nav_body">
+        <Container>
+          <Nav tabs justify-content-center>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '1' })}
+                onClick={() => { this.toggle('1'); }}
+              >
+                Main blog
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '2' })}
+                onClick={() => { this.toggle('2'); }}
+              >
+                FAQ
+              </NavLink>
+            </NavItem>
+          </Nav>
+          <TabContent activeTab={this.state.activeTab}>
+            <TabPane tabId="1">
+              <Row>
+                <Col sm="12">
+                  <IndexPage data={data} />
+                </Col>
+              </Row>
+            </TabPane>
+            <TabPane tabId="2">
+              <Row>
+              <Col sm="12">
+                  <h4>FAQ Blogs</h4>
+                </Col>
+              </Row>
+            </TabPane>
+          </TabContent>
+          </Container>
+        </div>
+      </div>
+    );
+  }
 }
 
 const IndexPage = ({data}) => (
@@ -61,7 +126,7 @@ const IndexPage = ({data}) => (
 )
 
 
-export default IndexPage
+// export default IndexPage
 
 
 export const pageQuery = graphql`

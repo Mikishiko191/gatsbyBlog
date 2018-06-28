@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import Link from 'gatsby-link'
-
+import {Container} from 'reactstrap'
 import MainLogo from '../../assets/header__logo.svg';
 
 // const Header = () => (
@@ -22,7 +22,9 @@ class Header extends Component {
   render() {
     const { name, url, name2, url2 } = this.props
     return (
+      
       <header className="header">
+      <Container>
         <div className="header__flex">
           <div className="header__logo">
             <a href="http://revain.org">      
@@ -57,7 +59,9 @@ class Header extends Component {
             </div>
           </div>
         </div>
+        </Container>
       </header>
+      
     )
   }
 }

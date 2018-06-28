@@ -23,6 +23,9 @@ a {
   text-decoration: none;
   color: $navBar__color;
   transition: all 600ms;
+  &:hover{
+    text-decoration: none;
+  }
 }
 
 
