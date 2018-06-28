@@ -20,7 +20,7 @@ import MainLogo from '../../assets/header__logo.svg';
 
 class Header extends Component {
   render() {
-    const { name, url, name2, url2 } = this.props
+    const { name, url } = this.props
     return (
       
       <header className="header">
@@ -49,9 +49,6 @@ class Header extends Component {
             <div className="header__wrap">
               <div className="header__hide">
                 <a className="hide" href='http://revain.org/#pubs'>Publications</a>
-              </div>
-              <div className="header__btn">
-              <Link className="backBtn" to={ url2 }>{ name2 }</Link>
               </div>
               <div className="header__btn back">
                 <a className="backBtn" href={ url }>{ name }</a>

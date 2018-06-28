@@ -4,7 +4,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Co
 import Header from '../components/Header'
 import classnames from 'classnames';
 
-
+// Blogpost
 const BlogPost = ({node}) => {
   return (
     <div>
@@ -23,6 +23,24 @@ const BlogPost = ({node}) => {
     
   )
 }
+
+const FaqPost = ({node}) => {
+  return (
+    <div>
+
+      <div className="blog-body__card">
+        <Link to={node.slug} className="blog-body__info ">
+          <div className="blog-body__bg" style={{ backgroundImage: 'url(' + node.featuredImage.file.url + ')' }}></div>
+          <h2 className="blog-body__title">{ node.title}</h2>
+          <p className="blog-body__excerpt">{ node.content.childMarkdownRemark.excerpt }</p>
+        </Link>
+      </div>
+    </div>
+    
+  )
+}
+
+// Main page
 
 export default class Page extends React.Component {
   constructor(props) {
@@ -47,9 +65,7 @@ export default class Page extends React.Component {
       <div className="mainpage">
         <Header
           name="back to revain"
-          url="http://revain.org"
-          name2="FAQ"
-          url2="/FAQ"       
+          url="http://revain.org"       
         />  
         <div className="nav_body">
         <Container>
@@ -82,7 +98,7 @@ export default class Page extends React.Component {
             <TabPane tabId="2">
               <Row>
               <Col sm="12">
-                  <h4>FAQ Blogs</h4>
+                <Second data={data} />
                 </Col>
               </Row>
             </TabPane>
@@ -93,6 +109,8 @@ export default class Page extends React.Component {
     );
   }
 }
+
+// Content
 
 const IndexPage = ({data}) => (
   <section className="blog-body">
@@ -125,9 +143,38 @@ const IndexPage = ({data}) => (
   </section>
 )
 
+const Second = ({data}) => (
+  <section className="blog-body">
+    <div className="blog-body__grid wrapper">
+      {data.allContentfulFaqBlogs.edges.map((edge) => 
+        <div className="underline" key={ edge.node.id } >
+          <FaqPost node={ edge.node } />
 
-// export default IndexPage
+          { edge.node.author === "Roman Ochnev" &&
+            <div className="author-card">
+              <img className="author-profile-image" src="http://www.gravatar.com/avatar/ed9b77b4115f82f37168f00521afedaa?s=40" alt="Roman Ochnev" />
+              <div className="author-card-content">
+                <h4 className="author-card-name">Roman Ochnev</h4>
+                <p>Head of Marketing</p>
+              </div>
+            </div>   
+          } 
+          { edge.node.author === "revain" &&
+            <div className="author-card">
+              <img className="author-profile-image" src="https://cdn-images-1.medium.com/fit/c/60/60/1*rAChgZhN6ZrJ6P1x9n4T6w.jpeg" alt="Roman Ochnev" />
+              <div className="author-card-content">
+                <h4 className="author-card-name">Revain</h4>
+              </div>
+            </div>   
+          } 
+          {/* <hr /> */}
+        </div>
+      )}
+    </div>
+  </section>
+)
 
+// Graphql
 
 export const pageQuery = graphql`
    query pageQuery {
@@ -156,9 +203,62 @@ export const pageQuery = graphql`
           }
         }
       }
-   }
+   allContentfulFaqBlogs (
+    filter: {
+      node_locale: {eq: "en-US"}
+    },
+    sort: {fields: [postCreatedData], order: DESC }
+    ) {
+        edges {
+          node {
+            id  
+            title   
+            slug
+            author
+            content{
+              childMarkdownRemark{
+                excerpt
+              }
+            } 
+            featuredImage {
+              file{
+                url
+              }
+            }       
+          }
+        }
+      }
+   } 
 `
-
+// export const pageFaq = graphql`
+//    query pageFaq {
+//     allContentfulFaqBlogs (
+//     filter: {
+//       node_locale: {eq: "en-US"}
+//     },
+//     sort: {fields: [postCreatedData], order: DESC }
+//     ) {
+//         edges {
+//           node {
+//             id  
+//             title   
+//             slug
+//             author
+//             content{
+//               childMarkdownRemark{
+//                 excerpt
+//               }
+//             } 
+//             featuredImage {
+//               file{
+//                 url
+//               }
+//             }       
+//           }
+//         }
+//       }
+//    }
+//   `
 
 
 
