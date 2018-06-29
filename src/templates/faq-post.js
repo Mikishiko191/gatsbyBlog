@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 import Socials from '../components/Socials/Socials'
-import Link from 'gatsby-link'
 import Header from '../components/Header'
 
 class FaqPost extends Component {

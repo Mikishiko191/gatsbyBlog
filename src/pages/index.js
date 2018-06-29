@@ -4,7 +4,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Co
 import Header from '../components/Header'
 import classnames from 'classnames';
 
-// Blogpost
+// Post card
 const BlogPost = ({node}) => {
   return (
     <div>
@@ -110,7 +110,7 @@ export default class Page extends React.Component {
   }
 }
 
-// Content
+// Fill Content
 
 const IndexPage = ({data}) => (
   <section className="blog-body">
@@ -230,35 +230,6 @@ export const pageandFaqQuery = graphql`
       }
    } 
 `
-// export const pageFaq = graphql`
-//    query pageFaq {
-//     allContentfulFaqBlogs (
-//     filter: {
-//       node_locale: {eq: "en-US"}
-//     },
-//     sort: {fields: [postCreatedData], order: DESC }
-//     ) {
-//         edges {
-//           node {
-//             id  
-//             title   
-//             slug
-//             author
-//             content{
-//               childMarkdownRemark{
-//                 excerpt
-//               }
-//             } 
-//             featuredImage {
-//               file{
-//                 url
-//               }
-//             }       
-//           }
-//         }
-//       }
-//    }
-//   `
 
 
 

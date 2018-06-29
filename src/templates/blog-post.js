@@ -1,9 +1,6 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link'
-
 import Socials from '../components/Socials/Socials'
-
 import Header from '../components/Header'
 
 class BlogPost extends Component {
