@@ -8,10 +8,6 @@ import classnames from 'classnames';
 const BlogPost = ({node}) => {
   return (
     <div>
-
-      
-      
-
       <div className="blog-body__card">
         <Link to={node.slug} className="blog-body__info ">
           <div className="blog-body__bg" style={{ backgroundImage: 'url(' + node.featuredImage.file.url + ')' }}></div>
@@ -20,7 +16,6 @@ const BlogPost = ({node}) => {
         </Link>
       </div>
     </div>
-    
   )
 }
 
@@ -80,7 +75,6 @@ export default class Page extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink
-              id="second"
                 className={classnames({ active: this.state.activeTab === '2' })}
                 onClick={() => { this.toggle('2'); }}
               >
