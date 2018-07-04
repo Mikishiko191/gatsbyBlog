@@ -78,7 +78,7 @@ export default class Page extends React.Component {
                 className={classnames({ active: this.state.activeTab === '2' })}
                 onClick={() => { this.toggle('2'); }}
               >
-                Beginner's guide
+                Beginner's section
               </NavLink>
             </NavItem>
           </Nav>
