@@ -16,7 +16,7 @@ class FaqPost extends Component {
       <div>
         
         <Header
-          name="back to posts"
+          name="back to blog"
           url="/2"
         />
 
