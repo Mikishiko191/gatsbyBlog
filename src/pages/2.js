@@ -9,7 +9,7 @@ const BlogPost = ({node}) => {
   return (
     <div>
       <div className="blog-body__card">
-        <Link to={node.slug} className="blog-body__info ">
+        <Link to={'/' + node.slug} className="blog-body__info ">
           <div className="blog-body__bg" style={{ backgroundImage: 'url(' + node.featuredImage.file.url + ')' }}></div>
           <h2 className="blog-body__title">{ node.title}</h2>
           <p className="blog-body__excerpt">{ node.content.childMarkdownRemark.excerpt }</p>
@@ -24,7 +24,7 @@ const FaqPost = ({node}) => {
     <div>
 
       <div className="blog-body__card">
-        <Link to={node.slug} className="blog-body__info ">
+        <Link to={'/' + node.slug} className="blog-body__info ">
           <div className="blog-body__bg" style={{ backgroundImage: 'url(' + node.featuredImage.file.url + ')' }}></div>
           <h2 className="blog-body__title">{ node.title}</h2>
           <p className="blog-body__excerpt">{ node.content.childMarkdownRemark.excerpt }</p>
@@ -43,7 +43,7 @@ export default class Page extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '1'
+      activeTab: '2'
     };
   }
   
@@ -67,14 +67,14 @@ export default class Page extends React.Component {
           <Nav tabs>
             <NavItem>
               <NavLink
-                className={classnames({ active: this.state.activeTab === '1' })}
-                onClick={() => { this.toggle('1'); }}
+              href = "/"
               >
                 Blog
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
+              id="second"
                 className={classnames({ active: this.state.activeTab === '2' })}
                 onClick={() => { this.toggle('2'); }}
               >
@@ -172,7 +172,7 @@ const Second = ({data}) => (
 // Graphql
 
 export const pageandFaqQuery = graphql`
-   query pageQuery {
+   query pageQuery2 {
     allContentfulAllContentfulBlog (
     filter: {
       node_locale: {eq: "en-US"}
@@ -225,6 +225,3 @@ export const pageandFaqQuery = graphql`
       }
    } 
 `
-
-
-
