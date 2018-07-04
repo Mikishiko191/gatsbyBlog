@@ -18,7 +18,6 @@ class FaqPost extends Component {
         <Header
           name="back to posts"
           url="/2"
-          
         />
 
         <section className="single-blog">
