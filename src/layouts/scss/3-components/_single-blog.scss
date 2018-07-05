@@ -91,6 +91,9 @@
       flex-wrap: wrap;
       justify-content: space-around;
       font-size: 3em;
+      ul{
+        list-style: none;
+      }
       li {
         transition: all 600ms;
         &:hover {
