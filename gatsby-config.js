@@ -13,6 +13,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: "GTM-N8VWH6D",
+        includeInDevelopment: false
+      }
+    },
+    {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: "./src/favicon.png",
