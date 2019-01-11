@@ -18,7 +18,7 @@ class Header extends Component {
           <div className="header__navBar">
             <div className="header__wrap">
               <div className="header__btn">
-                <a className="backBtn" href='http://dashboard.revain.org?utm_source=website&utm_campaign=revain.org'>Try 0.9</a>
+                <a className="backBtn" href='http://revain.org'>Try 1.1</a>
               </div>
               <div className="header__hide">
                 <a className="hide" href='http://revain.org/#about'>About</a>
