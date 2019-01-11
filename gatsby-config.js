@@ -13,6 +13,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.blog.revain.org',
+        policy: [{ userAgent: '*', disallow: '/' }]
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: "GTM-N8VWH6D",
